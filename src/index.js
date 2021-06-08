@@ -5,7 +5,7 @@ const port = 3000
 const fizzbuzz = require('./libs/FizzBazz')
 
 app.get('/', (req, res) => {
-    res.send('Hello World')
+    res.send('Hello World!')
 })
 
 app.get('/fizzbuzz/:num', (req, res) => {
