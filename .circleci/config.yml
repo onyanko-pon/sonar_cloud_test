@@ -1,33 +1,21 @@
+version: 2.1
+
 jobs:
-  test:
+  build:
     docker:
       - image: 'circleci/node:10.16.3'
     steps:
       - checkout
-      - run: echo $CIRCLE_BRANCH
-      - run: echo $GITHUB_DEFAULT_BRANCH
-      - run: echo $GITHUB_SOCIALTABLES_DEPLOYER_TOKEN
-      - run: echo $GITHUB_API_TOKEN
-      - run: npm install
-      - run: npm run test
-      - sonarcloud/scan-on-branch-commit:
-          cache-version: v0
-          covered-code-language: javascript
-          github-project-slug: onyanko-pon/sonar_cloud_test
-          project-key: onyanko-pon_sonar_cloud_test
-          coverage-paths: coverage/lcov.info
-      - run: echo $GITHUB_API_AUTH_HEADER
-      - run: echo $GITHUB_PROJECT_SLUG
+      - run:
+          name: install and test
+          command: npm install && npm run test
+      - sonarcloud/scan
 
 orbs:
-  sonarcloud: socialtables/sonarcloud@1.1.1
-version: 2.1
+  sonarcloud: sonarsource/sonarcloud@1.0.1
+
 workflows:
-  mesure-coverage:
+  main:
     jobs:
-      - test:
+      - build:
           context: sonarcloud
-          filters:
-            tags:
-              only: /.*/
-  version: 2
