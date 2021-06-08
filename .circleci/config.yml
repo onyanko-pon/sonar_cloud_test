@@ -17,6 +17,7 @@ jobs:
           coverage-paths: coverage/lcov.info
       - run: echo $GITHUB_API_AUTH_HEADER
       - run: echo $GITHUB_PROJECT_SLUG
+
 orbs:
   sonarcloud: socialtables/sonarcloud@1.1.1
 version: 2.1
