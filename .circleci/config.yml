@@ -1,18 +1,25 @@
-version: 2.1
-orbs:
-  node: circleci/node@1.1
 jobs:
-  test:
-    executor:
-      name: node/default
-      tag: '10.4'
+  build:
+    docker:
+      - image: 'circleci/node:10.16.3'
     steps:
       - checkout
-      - node/with-cache:
-          steps:
-            - run: npm install && npm run test
+      - run: npm install
+      - run: npm run test
+      - sonarcloud/scan-on-branch-commit:
+          cache-version: v0
+          github-project-slug: onyanko-pon/sonar_cloud_test
+          project-key: onyanko-pon_sonar_cloud_test
+          coverage-paths: coverage/lcov.info
+orbs:
+  sonarcloud: socialtables/sonarcloud@1.1.1
+version: 2.1
 workflows:
+  build-deploy:
+    jobs:
+      - build:
+#          context: st-global
+          filters:
+            tags:
+              only: /.*/
   version: 2
-  test: # ワークフローの名前
-    jobs: # 実行するジョブをここにリストします
-      - test
