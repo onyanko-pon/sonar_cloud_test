@@ -4,13 +4,15 @@ jobs:
       - image: 'circleci/node:10.16.3'
     steps:
       - checkout
-      - run: npm install
-      - run: npm run test
-      - sonarcloud/scan-on-branch-commit:
-          cache-version: v0
-          github-project-slug: onyanko-pon/sonar_cloud_test
-          project-key: onyanko-pon_sonar_cloud_test
-          coverage-paths: coverage/lcov.info
+      - run: echo $CIRCLE_BRANCH
+      - run: echo $GITHUB_DEFAULT_BRANCH
+#      - run: npm install
+#      - run: npm run test
+#      - sonarcloud/scan:
+#          cache-version: v0
+#          github-project-slug: onyanko-pon/sonar_cloud_test
+#          project-key: onyanko-pon_sonar_cloud_test
+#          coverage-paths: coverage/lcov.info
 orbs:
   sonarcloud: socialtables/sonarcloud@1.1.1
 version: 2.1
