@@ -1,13 +1,14 @@
 {
   "scripts": {
     "dev": "nodemon main.js",
-    "test": "mocha test"
+    "test": "nyc --reporter=text mocha test"
   },
   "dependencies": {
     "express": "^4.17.1"
   },
   "devDependencies": {
     "mocha": "^9.0.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "nyc": "^15.1.0"
   }
 }
