@@ -10,8 +10,8 @@ jobs:
       - run: echo $GITHUB_API_TOKEN
       - run: npm install
       - run: npm run test
-      - sonarcloud/scan:
-#          cache-version: v0
+      - sonarcloud/scan-on-branch-commit:
+          cache-version: v0
           github-project-slug: onyanko-pon/sonar_cloud_test
           project-key: onyanko-pon_sonar_cloud_test
           coverage-paths: coverage/lcov.info
