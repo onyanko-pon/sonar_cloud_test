@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "nodemon main.js",
-    "test": "nyc --reporter=text mocha test"
+    "test": "nyc --reporter=lcov mocha test"
   },
   "dependencies": {
     "express": "^4.17.1"
