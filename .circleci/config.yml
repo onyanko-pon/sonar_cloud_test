@@ -12,7 +12,7 @@ jobs:
       - run: npm run test
       - sonarcloud/scan-on-branch-commit:
           cache-version: v0
-          organization: onyanko-pon
+          covered-code-language: javascript
           github-project-slug: onyanko-pon/sonar_cloud_test
           project-key: onyanko-pon_sonar_cloud_test
           coverage-paths: coverage/lcov.info
