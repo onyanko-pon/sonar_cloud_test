@@ -1,6 +1,6 @@
 const assert = require('assert')
 
-const pow = require('../libs/pow')
+const pow = require('../src/libs/pow')
 
 describe("pow", function() {
 
@@ -16,7 +16,7 @@ describe("pow", function() {
 
 
 
-const fizzbuzz = require('../libs/FizzBazz')
+const fizzbuzz = require('../src/libs/FizzBazz')
 
 describe("FizzBuzz", function() {
 

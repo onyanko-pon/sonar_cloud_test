@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dev": "nodemon src/index.js",
-    "test": "nyc --reporter=lcov mocha src/test"
+    "test": "nyc --reporter=lcov mocha test"
   },
   "dependencies": {
     "express": "^4.17.1"
