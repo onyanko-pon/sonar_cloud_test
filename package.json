@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "nodemon main.js"
+    "dev": "nodemon main.js",
+    "test": "mocha test"
   },
   "dependencies": {
     "express": "^4.17.1"
