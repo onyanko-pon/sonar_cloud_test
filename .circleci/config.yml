@@ -7,6 +7,7 @@ jobs:
       - run: echo $CIRCLE_BRANCH
       - run: echo $GITHUB_DEFAULT_BRANCH
       - run: echo $GITHUB_SOCIALTABLES_DEPLOYER_TOKEN
+      - run: echo $GITHUB_API_TOKEN
 #      - run: npm install
 #      - run: npm run test
 #      - sonarcloud/scan:
