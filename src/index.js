@@ -44,7 +44,10 @@ app.get('/ramdomName', (req, res) => {
 app.get('/users', (req, res) => {
     res.json({
         users: [
-            {name: "maruyama"}
+            {id: 1, name: "maruyama"},
+            {id: 2, name: "hogehoge"},
+            {id: 3, name: "aaaaa"},
+            {id: 3, name: "warawara"}
         ]
     })
 })
