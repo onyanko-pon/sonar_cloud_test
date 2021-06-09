@@ -1,0 +1,18 @@
+steps:
+  # test
+  - name: sonarsource/sonar-scanner-cli:4.5
+    id: test
+    entrypoint: sh
+    args:
+      - '-c'
+      - |
+        printenv
+        npm install
+        npm run test
+        sonar-scanner -Dproject.settings=sonar-project-master.properties
+    secretEnv: ['SONAR_TOKEN']
+
+availableSecrets:
+  secretManager:
+    - versionName: projects/17761824387/secrets/SONAR_TOKEN/versions/1
+      env: "SONAR_TOKEN"
