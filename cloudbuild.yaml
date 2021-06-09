@@ -9,15 +9,8 @@ steps:
         npm install
         npm run test
         sonar-scanner -Dproject.settings=sonar-project.properties
-#        sonar-scanner \
-#          -Dsonar.organization=onyanko-pon \
-#          -Dsonar.projectKey=onyanko-pon_sonar_cloud_test \
-#          -Dsonar.host.url=https://sonarcloud.io \
-#          -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info\
-#          -Dsonar.tests=test \
-#          -Dsonar.sources=src
     secretEnv:
       - SONAR_TOKEN
 availableSecrets:
   - versionName: projects/17761824387/secrets/SONAR_TOKEN/versions/1
-    env: 'SONAR_TOKEN'
+    env: SONAR_TOKEN
