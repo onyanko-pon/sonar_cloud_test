@@ -17,10 +17,11 @@ app.get('/fizzbuzz/:num', (req, res) => {
 
 app.get('/add/:num1/:num2', (req, res) => {
     const {num1, num2} = req.params
-    const sum = add(Number(num1), Number(nu2))
+    const sum = Add(Number(num1), Number(num2))
     res.send(sum)
 })
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
+
