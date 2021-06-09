@@ -12,6 +12,7 @@ steps:
     sonar-scanner -Dproject.settings=sonar-project.properties
   secretEnv: ['SONAR_TOKEN']
   env:
+    - 'PROJECT_ID=$PROJECT_ID'
     - 'PR_NUMBER=$_PR_NUMBER'
 
 availableSecrets:
