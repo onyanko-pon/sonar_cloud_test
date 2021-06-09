@@ -5,15 +5,15 @@ steps:
     entrypoint: sh
     args:
       - '-c'
-      - |
-        npm install
-        npm run test
-        sonar-scanner \
-        -Dproject.settings=sonar-project.properties
-    secretEnv:
-      - SONAR_TOKEN
-
-availableSecrets:
-  - secretManager:
-      - versionName: projects/17761824387/secrets/SONAR_TOKEN/versions/1
-        env: SONAR_TOKEN
+#      - |
+#        npm install
+#        npm run test
+#        sonar-scanner \
+#        -Dproject.settings=sonar-project.properties
+#    secretEnv:
+#      - SONAR_TOKEN
+#
+#availableSecrets:
+#  - secretManager:
+#      - versionName: projects/17761824387/secrets/SONAR_TOKEN/versions/1
+#        env: SONAR_TOKEN
