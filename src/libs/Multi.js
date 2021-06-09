@@ -5,3 +5,4 @@ module.exports = (a, b) => {
 const multi = (a, b) => {
     return a * b
 }
+
