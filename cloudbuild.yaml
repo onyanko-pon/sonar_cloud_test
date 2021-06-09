@@ -11,6 +11,6 @@ steps:
     sonar-scanner -Dproject.settings=sonar-project.properties
 
 availableSecrets:
-- secretManager:
+  secretManager:
   - versionName: projects/17761824387/secrets/SONAR_TOKEN/versions/1
     env: "SONAR_TOKEN"
