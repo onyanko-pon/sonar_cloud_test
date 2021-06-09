@@ -52,6 +52,17 @@ app.get('/users', (req, res) => {
     })
 })
 
+app.get('/hoge', (req, res) => {
+    res.json({
+        users: [
+            {id: 1, name: "maruyama"},
+            {id: 2, name: "hogehoge"},
+            {id: 3, name: "aaaaa"},
+            {id: 3, name: "warawara"}
+        ]
+    })
+})
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
