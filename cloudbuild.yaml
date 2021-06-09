@@ -6,6 +6,7 @@ steps:
   args:
   - '-c'
   - |
+    printenv
     npm install
     npm run test
     sonar-scanner -Dproject.settings=sonar-project.properties
