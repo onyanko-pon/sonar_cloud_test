@@ -14,8 +14,6 @@ describe("pow", function() {
 
 });
 
-
-
 const fizzbuzz = require('../src/libs/FizzBazz')
 
 describe("FizzBuzz", function() {
@@ -34,5 +32,14 @@ describe("FizzBuzz", function() {
 
     it("not fizz not buzz", function() {
         assert.equal(fizzbuzz(1), '1');
+    });
+});
+
+const Multi = require('../src/libs/Multi')
+
+describe("Multi", function() {
+
+    it("2*2", function() {
+        assert.equal(Multi(2, 2), 4);
     });
 });
