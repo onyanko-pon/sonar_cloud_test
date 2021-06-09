@@ -5,8 +5,8 @@ steps:
     entrypoint: sh
     args:
       - '-c'
-#      - |
-#        npm install
+      - |
+        npm install
 #        npm run test
 #        sonar-scanner \
 #        -Dproject.settings=sonar-project.properties
