@@ -9,11 +9,12 @@ steps:
     printenv
     npm install
     npm run test
-    sonar-scanner -Dproject.settings=sonar-project.properties
+    sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.pullrequest.key=$$_PR_NUMBER -Dsonar.pullrequest.key=$_PR_NUMBER -Dsonar.pullrequest.branch=$BRANCH_NAME
   secretEnv: ['SONAR_TOKEN']
   env:
     - 'PROJECT_ID=$PROJECT_ID'
     - 'PR_NUMBER=$_PR_NUMBER'
+    - 'BRANCH_NAME=$BRANCH_NAME'
 
 availableSecrets:
   secretManager:
