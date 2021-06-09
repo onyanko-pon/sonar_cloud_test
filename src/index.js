@@ -41,6 +41,14 @@ app.get('/ramdomName', (req, res) => {
     res.send(name)
 })
 
+app.get('/users', (req, res) => {
+    res.json({
+        users: [
+            {name: "maruyama"}
+        ]
+    })
+})
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
