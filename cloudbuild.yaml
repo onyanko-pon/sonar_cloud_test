@@ -12,7 +12,7 @@ steps:
 #    secretEnv:
 #      - SONAR_TOKEN
 #
-#availableSecrets:
-#  - secretManager:
-#      - versionName: projects/17761824387/secrets/SONAR_TOKEN/versions/1
-#        env: SONAR_TOKEN
+availableSecrets:
+  - secretManager:
+      - versionName: projects/17761824387/secrets/SONAR_TOKEN/versions/1
+        env: "SONAR_TOKEN"
