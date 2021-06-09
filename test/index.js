@@ -43,3 +43,11 @@ describe("Multi", function() {
         assert.equal(Multi(2, 2), 4);
     });
 });
+
+const Div = require('../src/libs/Div')
+
+describe("Div", function() {
+    it("1/10", function() {
+        assert.equal(Div(1, 10), 0.1);
+    });
+});
