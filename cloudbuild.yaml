@@ -12,9 +12,9 @@ steps:
 
   secretEnv: ['SONAR_TOKEN']
 
-substitutions:
-  _HEAD_BRANCH: aa
-  _BASE_BRANCH: bb
+#substitutions:
+#  _HEAD_BRANCH: aa
+#  _BASE_BRANCH: bb
 
 - name: sonarsource/sonar-scanner-cli:4.5
   id: test
