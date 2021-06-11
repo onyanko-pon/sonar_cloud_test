@@ -13,9 +13,11 @@ steps:
       ls
       git checkout -b fixx origin/fixx
       git branch -D master
+      git checkout -b master origin/master
+      git checkout fixx
       git branch
       ls
-      git branch -r
+      git branch -a
 
 - name: sonarsource/sonar-scanner-cli:4.5
   id: test
