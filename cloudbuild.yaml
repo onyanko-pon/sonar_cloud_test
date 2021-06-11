@@ -1,8 +1,15 @@
 steps:
   # test
-#- name: gcr.io/cloud-builders/git
-#  id: git-unshalllo
-#  args: [ 'fetch', '--unshallow' ]
+- name: gcr.io/cloud-builders/git
+  id: git-unshalllo
+  entrypoint: sh
+  args:
+    - '-c'
+    - |
+      ls
+      git branch
+      git fetch --unshallow
+      git branch
 
 - name: sonarsource/sonar-scanner-cli:4.5
   id: test
