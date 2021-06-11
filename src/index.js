@@ -63,6 +63,16 @@ app.get('/hoge', (req, res) => {
     })
 })
 
+const Fibonacci = require('./libs/Fibonacci')
+app.get('/fibonacci/:count', (req, res) => {
+    const count = Number(req.params.count)
+
+    res.json({
+        fibonacci_list: Fibonacci(count)
+    })
+})
+
+
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
 })
