@@ -12,23 +12,23 @@ steps:
 
   secretEnv: ['SONAR_TOKEN']
 
-#substitutions:
-#  _HEAD_BRANCH: aa
-#  _BASE_BRANCH: bb
+substitutions:
+  _HEAD_BRANCH: aa
+  _BASE_BRANCH: bb
 
-#- name: sonarsource/sonar-scanner-cli:4.5
-#  id: test
-#  entrypoint: sh
-#  args:
-#  - '-c'
-#  - |
-#    ls
-#    git status
-#    npm install
-#    git branch
-#    ls
-#    sonar-scanner -Dproject.settings=sonar-project.properties
-#  secretEnv: ['SONAR_TOKEN']
+- name: sonarsource/sonar-scanner-cli:4.5
+  id: test
+  entrypoint: sh
+  args:
+  - '-c'
+  - |
+    ls
+    git status
+    npm install
+    git branch
+    ls
+    sonar-scanner -Dproject.settings=sonar-project.properties
+  secretEnv: ['SONAR_TOKEN']
 #  env:
 #    - 'PR_NUMBER=$_PR_NUMBER'
 #    - 'BRANCH_NAME=$BRANCH_NAME'
