@@ -14,12 +14,12 @@ steps:
       printenv
   secretEnv: ['SONAR_TOKEN']
   env:
-    - '$HEAD_BRANCH=$_HEAD_BRANCH'
-    - '$BASE_BRANCH=$_BASE_BRANCH'
+    - 'aHEAD_BRANCH=$_HEAD_BRANCH'
+    - 'aBASE_BRANCH=$_BASE_BRANCH'
 
 substitutions:
-  _HEAD_BRANCH: "fixx"
-  _BASE_BRANCH: "master"
+  _HEAD_BRANCH: fixx
+  _BASE_BRANCH: master
 
 #- name: sonarsource/sonar-scanner-cli:4.5
 #  id: test
