@@ -19,6 +19,8 @@ steps:
       ls
       git branch -a
       printenv
+  secretEnv: ['SONAR_TOKEN']
+
 substitutions:
   _HEAD_BRANCH: "fixx"
   _BASE_BRANCH: "master"
