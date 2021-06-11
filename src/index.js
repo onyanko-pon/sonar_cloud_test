@@ -72,6 +72,15 @@ app.get('/fibonacci/:count', (req, res) => {
     })
 })
 
+const Increment = require('./libs/Increment')
+app.get('/fibonacci/:num', (req, res) => {
+    const num = Number(req.params.num)
+
+    res.json({
+        num: Increment(num)
+    })
+})
+
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
