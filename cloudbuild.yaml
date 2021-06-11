@@ -18,6 +18,7 @@ steps:
     git branch
     ls
     ls .scannerwork/
+    cat .scannerwork/report-task.txt
   secretEnv: ['SONAR_TOKEN']
   env:
     - 'PR_NUMBER=$_PR_NUMBER'
