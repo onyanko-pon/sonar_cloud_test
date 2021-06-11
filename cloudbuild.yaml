@@ -8,6 +8,8 @@ steps:
   - |
     npm install
     npm run test
+    sonar-scanner -Dproject.settings=sonar-project.properties
+
 #    sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.pullrequest.key=$_PR_NUMBER -Dsonar.pullrequest.branch=$BRANCH_NAME -Dsonar.log.level=TRACE -X
 #  secretEnv: ['SONAR_TOKEN']
 #  env:
