@@ -13,11 +13,11 @@ jobs:
         environment:
           - PR_NUMBER=$_PR_NUMBER
           - BRANCH_NAME=$BRANCH_NAME
-      - sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.pullrequest.key=$_PR_NUMBER -Dsonar.pullrequest.branch=$BRANCH_NAME -Dsonar.log.level=TRACE -X
-        secretEnv: [ 'SONAR_TOKEN' ]
-        env:
-          - 'PR_NUMBER=$_PR_NUMBER'
-          - 'BRANCH_NAME=$BRANCH_NAME'
+#      - sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.pullrequest.key=$_PR_NUMBER -Dsonar.pullrequest.branch=$BRANCH_NAME -Dsonar.log.level=TRACE -X
+#        secretEnv: [ 'SONAR_TOKEN' ]
+#        env:
+#          - 'PR_NUMBER=$_PR_NUMBER'
+#          - 'BRANCH_NAME=$BRANCH_NAME'
 
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.2
