@@ -11,7 +11,7 @@ steps:
       git fetch --unshallow
       git branch
       ls
-      git checkout fixx
+      git checkout -b fixx origin/fixx
       git branch -D master
       git branch
       ls
