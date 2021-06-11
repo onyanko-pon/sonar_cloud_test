@@ -18,8 +18,8 @@ steps:
     - 'aBASE_BRANCH=$_BASE_BRANCH'
 
 substitutions:
-  $_HEAD_BRANCH: fixx
-  $_BASE_BRANCH: master
+  _HEAD_BRANCH: aa
+  _BASE_BRANCH: bb
 
 #- name: sonarsource/sonar-scanner-cli:4.5
 #  id: test
