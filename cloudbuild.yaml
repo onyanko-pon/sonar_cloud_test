@@ -13,29 +13,30 @@ steps:
       ls
       git checkout -b fixx origin/fixx
       git branch -D master
-      git checkout -b master origin/master
+      git checkout -b develop origin/develop
       git checkout fixx
       git branch
       ls
       git branch -a
+      printenv
 
-- name: sonarsource/sonar-scanner-cli:4.5
-  id: test
-  entrypoint: sh
-  args:
-  - '-c'
-  - |
-    ls
-    git status
-    npm install
-    git branch
-    ls
-    sonar-scanner -Dproject.settings=sonar-project.properties
-  secretEnv: ['SONAR_TOKEN']
-  env:
-    - 'PR_NUMBER=$_PR_NUMBER'
-    - 'BRANCH_NAME=$BRANCH_NAME'
-    - 'REVISION_ID=$REVISION_ID'
+#- name: sonarsource/sonar-scanner-cli:4.5
+#  id: test
+#  entrypoint: sh
+#  args:
+#  - '-c'
+#  - |
+#    ls
+#    git status
+#    npm install
+#    git branch
+#    ls
+#    sonar-scanner -Dproject.settings=sonar-project.properties
+#  secretEnv: ['SONAR_TOKEN']
+#  env:
+#    - 'PR_NUMBER=$_PR_NUMBER'
+#    - 'BRANCH_NAME=$BRANCH_NAME'
+#    - 'REVISION_ID=$REVISION_ID'
 
 #    sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.pullrequest.key=$_PR_NUMBER -Dsonar.pullrequest.branch=$BRANCH_NAME -Dsonar.log.level=TRACE -X
 #  secretEnv: ['SONAR_TOKEN']
@@ -45,6 +46,8 @@ steps:
 #    sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.pullrequest.key=$_PR_NUMBER -Dsonar.pullrequest.branch=$BRANCH_NAME
 #    ls .scannerwork/
 #    cat .scannerwork/report-task.txt
+
+#      git checkout -b master origin/master
 
 availableSecrets:
   secretManager:
