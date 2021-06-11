@@ -11,6 +11,11 @@ steps:
       git fetch --unshallow
       git branch
       ls
+      git checkout fixx
+      git branch -D master
+      git branch
+      ls
+      git branch -r
 
 - name: sonarsource/sonar-scanner-cli:4.5
   id: test
