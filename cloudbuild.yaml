@@ -12,7 +12,7 @@ steps:
   - |
     npm install
     npm run test
-    sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.pullrequest.key=$_PR_NUMBER -Dsonar.pullrequest.branch=$BRANCH_NAME -Dsonar.scm.revision=$REVISION_ID
+    sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.pullrequest.key=$_PR_NUMBER -Dsonar.pullrequest.branch=$BRANCH_NAME
   secretEnv: ['SONAR_TOKEN']
   env:
     - 'PR_NUMBER=$_PR_NUMBER'
