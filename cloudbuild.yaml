@@ -8,6 +8,7 @@ steps:
     - |
       git fetch --unshallow
       git branch -m master $_HEAD_BRANCH
+      git branch
 
   secretEnv: ['SONAR_TOKEN']
 
