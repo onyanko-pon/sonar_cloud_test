@@ -6,11 +6,9 @@ steps:
   args:
   - '-c'
   - |
-    printenv
     npm install
     npm run test
-    sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.pullrequest.key=$_PR_NUMBER -Dsonar.pullrequest.branch=$BRANCH_NAME -Dsonar.verbose=true -Dsonar.log.level=TRACE -X
-    cat /workspace/.scannerwork/report-task.txt
+    sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.pullrequest.key=$_PR_NUMBER -Dsonar.pullrequest.branch=$BRANCH_NAME -Dsonar.log.level=TRACE -X
   secretEnv: ['SONAR_TOKEN']
   env:
     - 'PR_NUMBER=$_PR_NUMBER'
