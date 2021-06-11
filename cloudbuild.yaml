@@ -28,7 +28,6 @@ steps:
     ls
     git status
     npm install
-#    npm run test
     git branch
     ls
     sonar-scanner -Dproject.settings=sonar-project.properties
