@@ -16,8 +16,6 @@ steps:
     npm run test
     git branch
     ls
-    ls .scannerwork/
-    cat .scannerwork/report-task.txt
   secretEnv: ['SONAR_TOKEN']
   env:
     - 'PR_NUMBER=$_PR_NUMBER'
@@ -30,6 +28,8 @@ steps:
 #    - 'PR_NUMBER=$_PR_NUMBER'
 #    - 'BRANCH_NAME=$BRANCH_NAME'
 #    sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.pullrequest.key=$_PR_NUMBER -Dsonar.pullrequest.branch=$BRANCH_NAME
+#    ls .scannerwork/
+#    cat .scannerwork/report-task.txt
 
 availableSecrets:
   secretManager:
