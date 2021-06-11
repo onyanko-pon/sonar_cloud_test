@@ -6,6 +6,10 @@ steps:
   args:
     - '-c'
     - |
+      git fetch --unshallow
+      git branch -m master fixx
+      echo "----echo head branch----"
+      echo $_HEAD_BRANCH
       echo "---branch---"
       git branch
       echo "---branch a---"
@@ -17,9 +21,9 @@ steps:
     - 'aHEAD_BRANCH=$_HEAD_BRANCH'
     - 'aBASE_BRANCH=$_BASE_BRANCH'
 
-substitutions:
-  _HEAD_BRANCH: aa
-  _BASE_BRANCH: bb
+#substitutions:
+#  _HEAD_BRANCH: aa
+#  _BASE_BRANCH: bb
 
 #- name: sonarsource/sonar-scanner-cli:4.5
 #  id: test
