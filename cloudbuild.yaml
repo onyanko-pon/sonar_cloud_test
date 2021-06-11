@@ -4,7 +4,6 @@ steps:
   id: test
   entrypoint: sh
   args:
-  - '-c'
   - |
     git config --global init.defaultBranch master
     npm install
