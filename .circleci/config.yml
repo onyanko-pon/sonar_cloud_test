@@ -9,7 +9,6 @@ jobs:
       - run:
           name: install and test
           command: npm install && npm run test
-      - sonarcloud/scan
       - run:
           name: hoge
           command: |
@@ -17,6 +16,7 @@ jobs:
             git branch
             git status
 
+#      - sonarcloud/scan
 #    environment:
 #      PR_NUMBER: $_PR_NUMBER
 #      BRANCH_NAME: $BRANCH_NAME
