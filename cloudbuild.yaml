@@ -19,6 +19,9 @@ steps:
       ls
       git branch -a
       printenv
+substitutions:
+  _HEAD_BRANCH: "fixx"
+  _BASE_BRANCH: "master"
 
 #- name: sonarsource/sonar-scanner-cli:4.5
 #  id: test
