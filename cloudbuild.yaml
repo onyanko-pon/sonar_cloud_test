@@ -10,6 +10,8 @@ steps:
   args:
   - '-c'
   - |
+    ls
+    git status
     npm install
     npm run test
     sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.pullrequest.key=$_PR_NUMBER -Dsonar.pullrequest.branch=$BRANCH_NAME
