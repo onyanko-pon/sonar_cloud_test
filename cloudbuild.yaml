@@ -10,6 +10,8 @@ steps:
       git branch -m master fixx
       echo "----echo head branch----"
       echo $_HEAD_BRANCH
+      echo "----echo base branch----"
+        echo $_BASE_BRANCH
       echo "---branch---"
       git branch
       echo "---branch a---"
