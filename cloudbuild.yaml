@@ -18,8 +18,6 @@ steps:
     - '$BASE_BRANCH=$_BASE_BRANCH'
 
 substitutions:
-  $_HEAD_BRANCH: "fixx"
-  $_BASE_BRANCH: "master"
   _HEAD_BRANCH: "fixx"
   _BASE_BRANCH: "master"
 
