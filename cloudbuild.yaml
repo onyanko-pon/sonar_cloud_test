@@ -6,22 +6,20 @@ steps:
   args:
     - '-c'
     - |
-      ls
+      echo "---branch---"
       git branch
-      git fetch --unshallow
-      git branch
-      ls
-      git checkout -b fixx origin/fixx
-      git branch -D master
-      git checkout -b develop origin/develop
-      git checkout fixx
-      git branch
-      ls
+      echo "---branch a---"
       git branch -a
+      echo "---printenv---"
       printenv
   secretEnv: ['SONAR_TOKEN']
+  env:
+    - '$HEAD_BRANCH=$_HEAD_BRANCH'
+    - '$BASE_BRANCH=$_BASE_BRANCH'
 
 substitutions:
+  $_HEAD_BRANCH: "fixx"
+  $_BASE_BRANCH: "master"
   _HEAD_BRANCH: "fixx"
   _BASE_BRANCH: "master"
 
