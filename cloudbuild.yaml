@@ -6,6 +6,7 @@ steps:
   args:
   - '-c'
   - |
+    git config --global init.defaultBranch master
     npm install
     npm run test
     sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.pullrequest.key=$_PR_NUMBER -Dsonar.pullrequest.branch=$BRANCH_NAME -Dsonar.scm.revision=$REVISION_ID
