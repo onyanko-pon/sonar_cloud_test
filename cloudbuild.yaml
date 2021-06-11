@@ -10,6 +10,7 @@ steps:
       git branch
       git fetch --unshallow
       git branch
+      ls
 
 - name: sonarsource/sonar-scanner-cli:4.5
   id: test
