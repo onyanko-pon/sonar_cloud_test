@@ -25,7 +25,11 @@ steps:
   - '-c'
   - |
     git branch -m master $_HEAD_BRANCH
-    sonar-scanner -Dproject.settings=sonar-project.properties
+    sonar-scanner \
+      -Dproject.settings=sonar-project.properties \
+      -Dsonar.pullrequest.key=$_PR_NUMBER \
+      -Dsonar.pullrequest.branch=$_HEAD_BRANCH \
+      -Dsonar.pullrequest.base=$_BASE_BRANCH
   secretEnv: ['SONAR_TOKEN']
 
 availableSecrets:
