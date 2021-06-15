@@ -17,7 +17,7 @@ steps:
     - npm run test
 
 - name: sonarsource/sonar-scanner-cli:4.5
-  id: test
+  id: sonar-scan
   entrypoint: sh
   args:
   - '-c'
