@@ -13,8 +13,10 @@ steps:
   id: test
   entrypoint: sh
   args:
-    - npm install
-    - npm run test
+    - '-c'
+    - |
+      npm install
+      npm run test
 
 - name: sonarsource/sonar-scanner-cli:4.5
   id: sonar-scan
