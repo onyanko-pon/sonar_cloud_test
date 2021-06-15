@@ -1,20 +1,20 @@
 steps:
   # test
-- name: gcr.io/cloud-builders/git
-  id: git-unshalllo
+#- name: gcr.io/cloud-builders/git
+#  id: git-unshalllo
+#  entrypoint: sh
+#  args:
+#    - '-c'
+#    - |
+#      git branch -m master $_HEAD_BRANCH
+# TODO sonarにPR numberなどを付与する
+
+- name: node:12-slim
+  id: test
   entrypoint: sh
   args:
-    - '-c'
-    - |
-      git fetch --unshallow
-      git branch -m master $_HEAD_BRANCH
-      git branch
-
-  secretEnv: ['SONAR_TOKEN']
-
-#substitutions:
-#  _HEAD_BRANCH: aa
-#  _BASE_BRANCH: bb
+    - npm install
+    - npm run test
 
 - name: sonarsource/sonar-scanner-cli:4.5
   id: test
@@ -22,40 +22,9 @@ steps:
   args:
   - '-c'
   - |
-    ls
-    git status
-    npm install
-    npm run test
-    git branch
-    ls
+    git branch -m master $_HEAD_BRANCH
     sonar-scanner -Dproject.settings=sonar-project.properties
   secretEnv: ['SONAR_TOKEN']
-#  env:
-#    - 'PR_NUMBER=$_PR_NUMBER'
-#    - 'BRANCH_NAME=$BRANCH_NAME'
-#    - 'REVISION_ID=$REVISION_ID'
-
-#    sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.pullrequest.key=$_PR_NUMBER -Dsonar.pullrequest.branch=$BRANCH_NAME -Dsonar.log.level=TRACE -X
-#  secretEnv: ['SONAR_TOKEN']
-#  env:
-#    - 'PR_NUMBER=$_PR_NUMBER'
-#    - 'BRANCH_NAME=$BRANCH_NAME'
-#    sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.pullrequest.key=$_PR_NUMBER -Dsonar.pullrequest.branch=$BRANCH_NAME
-#    ls .scannerwork/
-#    cat .scannerwork/report-task.txt
-
-#      git checkout -b master origin/master
-
-#        echo "----echo head branch----"
-#        echo $_HEAD_BRANCH
-#        echo "----echo base branch----"
-#        echo $_BASE_BRANCH
-#        echo "---branch---"
-#        git branch
-#        echo "---branch a---"
-#        git branch -a
-#        echo "---printenv---"
-#        printenv
 
 availableSecrets:
   secretManager:
