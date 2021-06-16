@@ -1,21 +1,36 @@
 steps:
   # test
-- name: sonarsource/sonar-scanner-cli:4.5
+#- name: gcr.io/cloud-builders/git
+#  id: git-unshalllo
+#  entrypoint: sh
+#  args:
+#    - '-c'
+#    - |
+#      git branch -m master $_HEAD_BRANCH
+# TODO sonarにPR numberなどを付与する
+
+- name: node:12-slim
   id: test
+  entrypoint: sh
+  args:
+    - '-c'
+    - |
+      npm install
+      npm run test
+
+- name: sonarsource/sonar-scanner-cli:4.5
+  id: sonar-scan
   entrypoint: sh
   args:
   - '-c'
   - |
-    npm install
-    npm run test
-    sonar-scanner -Dproject.settings=sonar-project.properties
+    git branch -m master $_HEAD_BRANCH
+    sonar-scanner \
+      -Dproject.settings=sonar-project.properties \
+      -Dsonar.pullrequest.key=$_PR_NUMBER \
+      -Dsonar.pullrequest.branch=$_HEAD_BRANCH \
+      -Dsonar.pullrequest.base=$_BASE_BRANCH
   secretEnv: ['SONAR_TOKEN']
-
-#    sonar-scanner -Dproject.settings=sonar-project.properties -Dsonar.pullrequest.key=$_PR_NUMBER -Dsonar.pullrequest.branch=$BRANCH_NAME -Dsonar.log.level=TRACE -X
-#  secretEnv: ['SONAR_TOKEN']
-#  env:
-#    - 'PR_NUMBER=$_PR_NUMBER'
-#    - 'BRANCH_NAME=$BRANCH_NAME'
 
 availableSecrets:
   secretManager:

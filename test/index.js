@@ -51,3 +51,11 @@ describe("Div", function() {
         assert.equal(Div(1, 10), 0.1);
     });
 });
+
+const Increment = require('../src/libs/Increment')
+
+describe("Increment", function() {
+    it("1 + 81", function() {
+        assert.equal(Increment(1), 82);
+    });
+});
